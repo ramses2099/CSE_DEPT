@@ -80,5 +80,37 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\apply.ico" />
+    <Content Include="Images\back.ico" />
+    <Content Include="Images\barra.jpg" />
+    <Content Include="Images\barra2.jpg" />
+    <Content Include="Images\boss.ico" />
+    <Content Include="Images\delete.ico" />
+    <Content Include="Images\dial.ico" />
+    <Content Include="Images\hit_logo.jpg" />
+    <Content Include="Images\hit_logo2.jpg" />
+    <Content Include="Images\home.ico" />
+    <Content Include="Images\icono_turno.bmp" />
+    <Content Include="Images\internet-iconos.jpg" />
+    <Content Include="Images\key.ico" />
+    <Content Include="Images\list.ico" />
+    <Content Include="Images\load.ico" />
+    <Content Include="Images\logobasc.jpg" />
+    <Content Include="Images\logoc-tpat.jpg" />
+    <Content Include="Images\logoiso.jpg" />
+    <Content Include="Images\logooea.jpg" />
+    <Content Include="Images\male.ico" />
+    <Content Include="Images\pinion.ico" />
+    <Content Include="Images\printer.ico" />
+    <Content Include="Images\table.ico" />
+    <Content Include="Images\thumbs down.ico" />
+    <Content Include="Images\thumbs up.ico" />
+    <Content Include="Images\turn off.ico" />
+    <Content Include="Images\undo.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
