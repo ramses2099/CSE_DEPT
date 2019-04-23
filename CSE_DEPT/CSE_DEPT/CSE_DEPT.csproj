@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,14 +51,20 @@
     <Compile Include="Entities\LogIn.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentCourse.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LogInService.cs" />
+    <Compile Include="Services\IRepository.cs" />
+    <Compile Include="Utils\Connection.cs" />
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -80,17 +87,47 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Images\application.ico" />
+    <Content Include="Images\application_warning.ico" />
     <Content Include="Images\apply.ico" />
     <Content Include="Images\back.ico" />
     <Content Include="Images\barra.jpg" />
     <Content Include="Images\barra2.jpg" />
     <Content Include="Images\boss.ico" />
+    <Content Include="Images\calculator.ico" />
+    <Content Include="Images\calendar.ico" />
+    <Content Include="Images\camera.ico" />
+    <Content Include="Images\clock.ico" />
+    <Content Include="Images\coffee.ico" />
+    <Content Include="Images\computer.ico" />
     <Content Include="Images\delete.ico" />
     <Content Include="Images\dial.ico" />
+    <Content Include="Images\direction_down.ico" />
+    <Content Include="Images\direction_left.ico" />
+    <Content Include="Images\direction_right.ico" />
+    <Content Include="Images\direction_up.ico" />
+    <Content Include="Images\disc.ico" />
+    <Content Include="Images\diskette.ico" />
+    <Content Include="Images\document.ico" />
+    <Content Include="Images\document_add.ico" />
+    <Content Include="Images\document_delete.ico" />
+    <Content Include="Images\document_edit.ico" />
+    <Content Include="Images\document_search.ico" />
+    <Content Include="Images\document_warning.ico" />
+    <Content Include="Images\file.ico" />
+    <Content Include="Images\file_add.ico" />
+    <Content Include="Images\file_delete.ico" />
+    <Content Include="Images\file_edit.ico" />
+    <Content Include="Images\file_search.ico" />
+    <Content Include="Images\file_warning.ico" />
+    <Content Include="Images\folder.ico" />
+    <Content Include="Images\folder_add.ico" />
+    <Content Include="Images\folder_delete.ico" />
+    <Content Include="Images\folder_empty.ico" />
+    <Content Include="Images\folder_search.ico" />
+    <Content Include="Images\folder_warning.ico" />
     <Content Include="Images\hit_logo.jpg" />
     <Content Include="Images\hit_logo2.jpg" />
     <Content Include="Images\home.ico" />
@@ -99,18 +136,63 @@
     <Content Include="Images\key.ico" />
     <Content Include="Images\list.ico" />
     <Content Include="Images\load.ico" />
+    <Content Include="Images\load_download.ico" />
+    <Content Include="Images\load_upload.ico" />
     <Content Include="Images\logobasc.jpg" />
     <Content Include="Images\logoc-tpat.jpg" />
     <Content Include="Images\logoiso.jpg" />
     <Content Include="Images\logooea.jpg" />
+    <Content Include="Images\mail.ico" />
+    <Content Include="Images\mail_delete.ico" />
+    <Content Include="Images\mail_receive.ico" />
+    <Content Include="Images\mail_search.ico" />
+    <Content Include="Images\mail_send.ico" />
+    <Content Include="Images\mail_warning.ico" />
+    <Content Include="Images\mail_write.ico" />
     <Content Include="Images\male.ico" />
+    <Content Include="Images\manage.ico" />
+    <Content Include="Images\message.ico" />
+    <Content Include="Images\notification_add.ico" />
+    <Content Include="Images\notification_done.ico" />
+    <Content Include="Images\notification_error.ico" />
+    <Content Include="Images\notification_remove.ico" />
+    <Content Include="Images\notification_warning.ico" />
+    <Content Include="Images\piechart.ico" />
     <Content Include="Images\pinion.ico" />
+    <Content Include="Images\player_fastforward.ico" />
+    <Content Include="Images\player_pause.ico" />
+    <Content Include="Images\player_play.ico" />
+    <Content Include="Images\player_record.ico" />
+    <Content Include="Images\player_rewind.ico" />
+    <Content Include="Images\player_stop.ico" />
     <Content Include="Images\printer.ico" />
+    <Content Include="Images\rss.ico" />
+    <Content Include="Images\search.ico" />
+    <Content Include="Images\security_key.ico" />
+    <Content Include="Images\security_keyandlock.ico" />
+    <Content Include="Images\security_lock.ico" />
+    <Content Include="Images\security_unlock.ico" />
+    <Content Include="Images\shoppingcart.ico" />
+    <Content Include="Images\shoppingcart_add.ico" />
+    <Content Include="Images\shoppingcart_checkout.ico" />
+    <Content Include="Images\shoppingcart_remove.ico" />
+    <Content Include="Images\shoppingcart_warning.ico" />
+    <Content Include="Images\star_empty.ico" />
+    <Content Include="Images\star_full.ico" />
+    <Content Include="Images\star_half.ico" />
     <Content Include="Images\table.ico" />
     <Content Include="Images\thumbs down.ico" />
     <Content Include="Images\thumbs up.ico" />
     <Content Include="Images\turn off.ico" />
     <Content Include="Images\undo.ico" />
+    <Content Include="Images\user.ico" />
+    <Content Include="Images\user_add.ico" />
+    <Content Include="Images\user_delete.ico" />
+    <Content Include="Images\volume.ico" />
+    <Content Include="Images\volume_down.ico" />
+    <Content Include="Images\volume_mute.ico" />
+    <Content Include="Images\volume_up.ico" />
+    <Content Include="Images\warning.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
