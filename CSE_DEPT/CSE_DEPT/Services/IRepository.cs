@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CSE_DEPT.Services
 {
-    public interface IRepository : IDisposable
+    public interface IRepository<T> where T : class
     {
-        void CrateObject(Object obj);
-        void DeleteObject(Object obj);
-        void UpdateObject(Object obj);
-        List<Object> GetObject();
+        void CrateObject(T obj);
+        void DeleteObject(T obj);
+        void UpdateObject(T obj);
+        List<T> GetObject();
 
     }
 }

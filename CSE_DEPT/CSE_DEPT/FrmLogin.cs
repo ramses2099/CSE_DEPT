@@ -25,14 +25,42 @@ namespace CSE_DEPT
         public FrmLogin()
         {
             InitializeComponent();
+            this.txtUserName.Text = "abrown";
+            this.txtPassword.Text = "america";
         }
                
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
+            using (LogInService service = new LogInService()) {
+
+                LogIn logIn = new LogIn() { Pass_word = this.Password, User_name = this.UserName };
+                //
+                if (service.ValidaLogIn(logIn))
+                {
+                    FrmMenu frmMenu = new FrmMenu();
+                    frmMenu.Show();
+                    this.Hide();
+
+                }
+                else {
+                    MessageBox.Show(this, "Usuario y Password Inconrrectas", "CSE_DEPT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+            }
+
+
+
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
 
         }
